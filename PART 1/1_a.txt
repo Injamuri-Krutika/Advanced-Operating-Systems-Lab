@@ -1,0 +1,163 @@
+1) command: date
+result: Thu Aug 16 15:41:22 IST 2018
+Observation:  
+a) Date can be specified in the format required like
+date +'%m-%d-%y" : 08-16-18
+date +'%m-%d-%Y" : 08-16-2018
+date +'%D" : 08/16/2018
+
+b) date --date='@2147483647' : calculates time from (1970-01-01 UTC)
+
+2)command: cal
+output: 
+    August 2018       
+Su Mo Tu We Th Fr Sa  
+          1  2  3  4  
+ 5  6  7  8  9 10 11  
+12 13 14 15 16 17 18  
+19 20 21 22 23 24 25  
+26 27 28 29 30 31 
+Observation:
+a) ncal displays calender in new format. To display it in old format we use ncal -b
+b) cal +year, cal year, "cal -y year" gives the calender of that year. ex: cal +2018
+c) cal -y entire years calender
+d) cal -m Dec displays calender of december this year
+
+3)Command: echo 1st OS LAB
+output: 1st OS LAB
+observation: 
+a) echo -e "Hello\tWorld" : -e is used for using the escape characters
+b) echo -n "Hello World" : No trailing new line
+
+4) command: man cal
+output: gives the information about calender, its options and formats used. Manual about calender
+observation: 
+a) man man give the manual about manual itself
+
+5) command: ls
+output: gives the files in present working directory.
+observation:
+a) ls ../ : gives the list of files in the previous directory
+b) ls ~ : gives the list of files in the home directory
+c) ls -a: goves the files that start with '.' also
+d) ls -l --author: 
+total 4
+-rw-r--r-- 1 18mcmt20 mtech18 18mcmt20 614 Aug 17  2018 OS LAB 1
+e) ls  --hide="O*" : Does not display the entries that start with O
+
+
+6)command: pwd
+output: /users/mtech/18mcmt20/Desktop
+observation 
+a) echo $(pwd): give the present working directory
+b) pwd -P: removes the symlinks and gives the original directory hierarchy
+
+
+7)command: mkdir Test
+output: Test directory is created in pwd 
+observatin: 
+a)default permissions of the directory :drwxr-xr-x 
+b)mkdir -m=777 Test2 : changes the default permission to the mentioned permissions
+c)mkdir -v Test3 : "mkdir: created directory 'Test3'"
+d)mkdir -p Test/test: creates parent and child directories
+
+8) command: cd
+output: changes directory
+observation: cd ../ used to goto previous directory
+
+9)command: rmdir
+output: removes directory
+observation:
+a) rmdir -p Test/tets removes parent and child directories
+b) rmdir Test --ignore-fail-on-non-empty: does not give failure response
+
+10) command: cat 
+output: file content is displayed
+observation :
+a) cat -n text.txt : gives line numbers
+b) cat -T text.txt : replaces tabs with ^I
+c) cat file1 file 2 : concatenates two files
+11)command : sort
+output : sorts the data inside file
+observation: 
+a) sorts the dta in ascending order by default. considers string as input.
+b) sort -r data.txt: reverses the original order
+c) sort -n data.txt : considers the input as numbers and sorts in asc order
+
+12) command: cp
+output: copies the contents in folder from source to destination 
+observation:
+a) cp -r ../Q* ../Lab : copies the folders that start with Q to Lab folder
+
+13)command: mv
+output: moves the folders , renames the files/folders
+observation:mv LabTest1/Q* LabTest2 : moves contents from one dir to other dir
+
+14)command: rm 
+output: removes files in a directory
+observation: rm -r ../Lab/Q*/* : recursively removes the files in child folders starting with Q
+
+15)command : wc
+output: Print newline, word, and byte counts for each FILE, and a total line if
+       more than one FILE is specified.  A word is a non-zero-length  sequence
+       of characters delimited by white space.
+observation: 
+a) wc LabTest2/QuickSort/quick :    7   143 13360 LabTest2/QuickSort/quick
+b) wc -m text.txt : character counts - 12338 LabTest2/QuickSort/quick
+
+16)command: head
+output: Print  the  first  10 lines of each FILE to standard output
+observation: 
+a) head -v : gives heading to file
+b) head -q : never print headers giving file names
+
+17) command: tail
+output: Print  the  last  10  lines of each FILE to standard output
+
+a) tail -v : gives heading to file
+b) tail -q : never print headers giving file names
+
+18) command: more
+output: prints only one page of data and pressing enter key gives further lines
+observation : cat test.txt | more : opens the file text.txt for one page and pressing enter key gives further lines
+
+19)command: pipe(|)
+output: used to concatenate commands. pass output of one command to next comman
+observation: cat test.txt | more : opens the file text.txt for one page and pressing enter key gives further lines
+
+20)command : tr
+output: tr - translate or delete characters
+
+observation : 
+cat data2.txt | tr -s [:space:] ' ' : replaces multiple spaces with single space
+cat data2.txt | tr '1' '2' : replaces 1 with 2
+
+21) command: chmod
+output: changes permissions to a file / folder
+observation:chmod -v 777 data.txt : mode of 'data.txt' changed from 0644 (rw-r--r--) to 0777 (rwxrwxrwx)
+
+22)command: chown
+output: change file owner and group
+
+23)command: chgrp
+output: change group ownership
+
+24)
+N=6
+a=0
+b=1 
+echo "The Fibonacci series is : "
+for (( i=0; i<N; i++ ))
+do
+    echo -n "$a "
+    fn=$((a + b))
+    a=$b
+    b=$fn
+done
+
+
+
+
+
+
+
